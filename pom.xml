@@ -48,7 +48,6 @@
         <java.source.version>${java.version}</java.source.version>
         <java.target.version>${java.version}</java.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <retrofit.title>retrofit</retrofit.title>
     </properties>
 
     <build>
@@ -56,7 +55,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
+                <version>3.5.3</version>
             </plugin>
             <!-- Jar -->
             <plugin>
@@ -68,10 +67,6 @@
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
-                        <manifestEntries>
-                            <Specification-Title>${retrofit.title}</Specification-Title>
-                            <Specification-Version>${retrofit.version}</Specification-Version>
-                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
