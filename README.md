@@ -5,3 +5,17 @@
 
 # easy-retrofit-parent
 the parent pom of easy-retrofit, Any mainstream Java web framework extension(starter) needs to inherit this file
+
+
+从3.0.0 开始, parent pom移除了如下配置, 以避免retrofit升级导致的parent文件升级
+```xml
+<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>retrofit</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+```

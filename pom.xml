@@ -5,11 +5,11 @@
 
     <groupId>io.github.easyretrofit</groupId>
     <artifactId>parent</artifactId>
-    <version>2.12.0</version>
+    <version>3.0.0</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>
-        the parent pom of easy-retrofit, Any mainstream Java web framework extension(starter) needs to inherit this file
+        the parent pom of easy-retrofit
     </description>
 
     <url>https://github.com/easyretrofit/${project.artifactId}</url>
@@ -48,26 +48,14 @@
         <java.source.version>${java.version}</java.source.version>
         <java.target.version>${java.version}</java.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <retrofit.version>2.12.0</retrofit.version>
-        <retrofit.title>retrofit</retrofit.title>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.squareup.retrofit2</groupId>
-                <artifactId>retrofit</artifactId>
-                <version>${retrofit.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.2</version>
+                <version>3.5.3</version>
             </plugin>
             <!-- Jar -->
             <plugin>
@@ -79,10 +67,6 @@
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
-                        <manifestEntries>
-                            <Specification-Title>${retrofit.title}</Specification-Title>
-                            <Specification-Version>${retrofit.version}</Specification-Version>
-                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
@@ -112,7 +96,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Java Doc -->
+            <!-- Javadoc -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -130,7 +114,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.2.7</version>
+                <version>3.2.8</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -141,10 +125,11 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Maven Central -->
             <plugin>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>0.7.0</version>
+                <version>0.8.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <publishingServerId>central</publishingServerId>
